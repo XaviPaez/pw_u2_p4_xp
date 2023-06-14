@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/formulario.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="formFutbolista">
+        <header>
+            <h1>Insertar Futbolista</h1>
+        </header>
+        <nav></nav>
+        <section>
+            <div id="appForm">
+
+                <form class="form" action="">
+                <p type="Nombre"> <input type="text" placeholder="Ingrese su nombre" v-model="nombre"></p>
+
+                <p type="Apellido"> <input type="text" placeholder="Ingrese su apellido" v-model="apellido"></p>
+
+                <p type="Club"> <input type="text" placeholder="Ingrese su Club" v-model="club"></p>
+
+                <p type="Nacionalidad"> <input type="text" placeholder="Ingrese su Nacionalidad" v-model="nacionalidad">
+                </p>
+            </form>
+                <button v-on:click="agregarFutbolista">Ingresar</button>
+
+                
+                <hr>
+                <div id="listado-futbolistas">
+                    <h3>Lista Futbolistas</h3>
+                    <ul>
+                        <li class="lista" v-for="({nombre, apellido, club, nacionalidad}, index) in miarregloFutbolista">
+                            <p>{{index+1}}-{{nombre}} {{apellido}} - {{club}} - {{nacionalidad}}</p>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    </div>
+    </section>
+    <footer></footer>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./js/formulario.js"></script>
+
+</body>
+
+</html>
